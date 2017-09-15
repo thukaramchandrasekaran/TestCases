@@ -22,6 +22,8 @@ And I should see arrival date auto populated same as Departure date
 When I click search button
 Then I should see Book a Flight Page with flight options
 
+#------------------------------------------------------------------------------------------------------------------
+
 @REG_HOMEPAGE_TC02
 Scenario: Check user not able to select past date in Departure date and Arrival Date
 
@@ -38,7 +40,7 @@ Then I should see calendar pop-up with today date selected
 When I try to select any past date
 Then I should see dates not enabled to click
 
-
+#------------------------------------------------------------------------------------------------------------------
 
 @REG_HOMEPAGE_TC03
 Scenario: Verify the search by selecting departure date is greater than arrival date
@@ -55,6 +57,7 @@ And I select option Show prices in Flying Blue Miles
 And I click on Search button
 Then I should see error message to select arrival date is greater than then departure date
 
+#------------------------------------------------------------------------------------------------------------------
 @REG_HOMEPAGE_TC04
 Scenario: Verify that user can select dates only from current year and next year
 	
@@ -75,6 +78,7 @@ When I click on next button till it gets disappear
 Then I should see the December of Upcoming year
 And I should see option to select Single Flight
 
+#------------------------------------------------------------------------------------------------------------------
 
 @REG_HOMEPAGE_TC05
 Scenario: Verify Return option is getting de-selected when we select Single flight from Arrival date calendar popup
@@ -88,6 +92,8 @@ Then I should calendar to choose arrival date is getting appeared automatically
 When I select single flight from calendar
 Then I should see Return option is getting de-selected
 And I should see Single Flight Text on Arrival date
+
+#------------------------------------------------------------------------------------------------------------------
 
 @REG_HOMEPAGE_TC06
 Scenario: Verify the flight search with valid and invalid passenger counts
@@ -107,8 +113,8 @@ Then I see zero passenger count in passenger input
 And I click on Search button
 Then I should see Book a Flight Page with flight options
 
-	When I click on Home icon 
-	Then I see home page with auto populated values
+When I click on Home icon 
+Then I see home page with auto populated values
 When In tap on passenger input 
 And I update value for all type passengers in such a way that sum of all <25
 And click save button
@@ -118,20 +124,20 @@ Then I should see Book a Flight Page with flight options
 
 
 When I click on Home icon 
-	Then I see home page with auto populated values
+Then I see home page with auto populated values
 
 When In tap on passenger input 
 And I update value for all type passengers in such a way that sum of all >25
 Then I see warning message 
 “””
 Are you planning on traveling with more than 25 people? No problem! Please send us your request by filling in our group form.
-
 “””
 And click save button
 Then I should see sum of all type passenger count in passenger input
 And I click on Search button
 Then I should see Book a Flight Page with flight options
 
+#------------------------------------------------------------------------------------------------------------------
 
 @REG_HOMEPAGE_TC07
 Scenario: Verify user able to enter values in subscribe and can we help you
@@ -151,10 +157,11 @@ Then I should success message for subscription
 “””
 We sent you an e-mail to confirm the application to receive our newsletter.
 “””
-
 When I enter valid question in type your question text field 
 And I click search button
 Then I should see valid search result
+
+#------------------------------------------------------------------------------------------------------------------
 
 @REG_HOMEPAGE_TC08
 Scenario: Verify search results by selecting with price and without price 
@@ -168,13 +175,13 @@ And I update "2" Adult "2" Children "1" Babies
 And I select option Show prices in Flying Blue Miles
 And I click on Search button
 Then I should see Book a Flight Page with flight options displayed with price
-
 When I click on Home icon 
-	Then I see home page with auto populated values
+Then I see home page with auto populated values
 Then I unselect the option “Show prices in Flying Blue Miles”
 And I click on Search button
 Then I should see Book a Flight Page with flight options displayed without price
 
+#------------------------------------------------------------------------------------------------------------------
 
 @REG_HOMEPAGE_TC09
 Scenario: Verify user not able to select Origin and Destination if user enter invalid values
@@ -182,10 +189,10 @@ Scenario: Verify user not able to select Origin and Destination if user enter in
 Given I am on the Transavia homepage
 When I enter Departure station as "xxx"
 Then I should see the message “No departure airports found”
-
 When I enter Arrival station as "yyy"
 Then I should see the message “No Destination found”	
 
+#------------------------------------------------------------------------------------------------------------------
 
 @REG_HOMEPAGE_TC10
 Scenario: Verify user not able to select Origin and Destination if user enter invalid values
@@ -196,23 +203,27 @@ When I tap on the destination field
 Then I should see option to select destination same as origin
 And I should see option to select from other airports
 
+#------------------------------------------------------------------------------------------------------------------
 
 @REG_HOMEPAGE_TC11
 Scenario: Verify the page appearance when we reduce the browser size
 
 Given I am on the Transavia homepage
-	Then I verify the all page elements displayed properly
-	When I reduce the browser size to 75% of the original size
-	And I verify the all page elements aligned properly
-	When I reduce the browser size to 50% of the original size
-	Then I should see links are getting collapsed in left corner 
-	And I should see options are getting decreased in Home page
+Then I verify the all page elements displayed properly
+When I reduce the browser size to 75% of the original size
+And I verify the all page elements aligned properly
+When I reduce the browser size to 50% of the original size
+Then I should see links are getting collapsed in left corner 
+And I should see options are getting decreased in Home page
 When I reduce the browser size to 25% of the original size
 Then I should see page which is resembling mobile web site
 And I should see home page with minimal options
 
+#------------------------------------------------------------------------------------------------------------------
+
 @REG_HOMEPAGE_TC12
-Scenario: Verify header and footer links and options in Home Page 
+Scenario: Verify header and footer links and options in Home Page
+
 Given I am on the Transavia homepage
 Then I verify the left header links
 “””
@@ -241,6 +252,7 @@ Then I should see About Transavia with 9 sub options
 And I should see Self Service with 6 sub options
 And I should see Get Inspired with 6 sub options
 
+#------------------------------------------------------------------------------------------------------------------
 
 @REG_HOMEPAGE_TC13
 Scenario: Verify that 2 times option displayed for Manage your booking and Online check-in in Home page 
@@ -253,6 +265,7 @@ And I should see “Go to My Transavia”
 And I should see one more option for Online check-in 
 And I should see “I want to check in”
 
+#------------------------------------------------------------------------------------------------------------------
 
 @REG_HOMEPAGE_TC14
 Scenario: Verify the various options displayed in the Home page
@@ -266,8 +279,8 @@ Go on a trip in the late summer
 And I should see transavia logo in right of the panel
 And I should see various fields to complete search
 “””
-From
-To
+From option
+To option
 Depart On date field 
 Return On date field
 Return On check box
@@ -296,29 +309,3 @@ And I should see Can we help yout title
 And I should see option to enter question
 And I should see option to search
 And I should see 4 social media icons
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
